@@ -15,31 +15,32 @@ import static_data from './STATIC_DATA.json';
 const columns = [
    { field: 'id', headerName: 'ID', width: 90 },
    {
-      field: 'name',
-      headerName: 'Name',
+      field: 'first_name',
+      headerName: 'First Name',
       width: 150,
       editable: true,
    },
+   {
+      field: 'last_name',
+      headerName: 'Last Name',
+      width: 150,
+      editable: true,
+   },
+
    {
       field: 'gender',
       headerName: 'Gender',
-      width: 150,
-      editable: true,
-   },
-   {
-      field: 'city',
-      headerName: 'City',
-      // type: 'number',
-      width: 110,
-      editable: true,
-   },
-   {
-      field: 'car',
-      headerName: 'Car',
-      description: 'This column has a value getter and is not sortable.',
+      // description: 'This column has a value getter and is not sortable.',
       width: 160,
       // valueGetter: (params) =>
       //    `${params.row.firstName || ''} ${params.row.lastName || ''}`,
+   },
+   {
+      field: 'first_login',
+      headerName: 'First Login',
+      type: 'date',
+      width: 110,
+      editable: true,
    },
 ];
 
@@ -92,21 +93,21 @@ export default function Data() {
                <Typography variant="h6" component="h2" color="primary">
                   Users
                </Typography>
-               <Button
+               {/* <Button
                   variant="outlined"
                   color="secondary"
                   startIcon={<PersonAddIcon />}
                >
                   New User
-               </Button>
+               </Button> */}
             </div>
             <div style={{ height: 500, width: '100%' }}>
                <DataGrid
                   rows={rows}
                   columns={columns}
-                  components={{
-                     Toolbar: GridToolbar,
-                  }}
+                  // components={{
+                  //    Toolbar: GridToolbar,
+                  // }}
                   checkboxSelection
                />
             </div>
